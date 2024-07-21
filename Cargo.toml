@@ -1,3 +1,5 @@
+workspace = { members = ["polygon_service"] }
+
 [package]
 name = "tut_proj"
 version = "0.1.0"
@@ -9,6 +11,8 @@ build = "build.rs"
 
 [dependencies]
 slint = "1.6"
+polygon_service = {path = "./polygon_service"}
+tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros"] }
 
 [build-dependencies]
 slint-build = "1.6"

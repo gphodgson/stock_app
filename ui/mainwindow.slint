@@ -1,0 +1,34 @@
+import { Button, HorizontalBox, LineEdit, AboutSlint } from "std-widgets.slint";
+
+component testComponent inherits LineEdit {
+    font-size: 13px;
+}
+
+//component Ticker inherits HorizontalBox{
+//
+//}
+
+export component MainWindow inherits Window {
+    in-out property <int> winHeight;
+    in-out property <int> winWidth;
+
+    width: winWidth * 1px;
+    height: winHeight * 1px;
+
+    callback create-chart-window();
+
+    HorizontalBox {
+        testComponent {
+            placeholder-text: "Ticker Symbol";
+            width: 150px;
+            height: 50px;
+        }
+        
+        Button {
+            text: "Create Chart";
+            clicked => {
+                root.create-chart-window();
+            }
+        }
+    }
+}
