@@ -11,7 +11,7 @@ pub struct PolygonService{
 impl PolygonService {
     pub fn create_client()->Result<Client, Box<dyn Error>>{
         let mut default_headers = HeaderMap::new();
-        default_headers.append("Authorization", HeaderValue::from_str("Bearer Q4HQ4E6m67fjB3JiBJUWcwtprYTOCsdj").unwrap());
+        default_headers.append("Authorization", HeaderValue::from_str("Bearer XX").unwrap());
 
         let builder = ClientBuilder::new()
             .connect_timeout(Duration::new(30,0))
