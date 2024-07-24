@@ -8,6 +8,7 @@ async fn main() -> Result<(), slint::PlatformError> {
     };
 
     let test_value = service.get_ticker_data("AAPL").await;
+    let test2 = test_value.err().unwrap().to_string();
 
     let ui = MainWindow::new()?;
     ui.set_winHeight(50);
@@ -20,15 +21,6 @@ async fn main() -> Result<(), slint::PlatformError> {
             ui.set_winHeight(ui.get_winHeight() + 100);
         }
     });
-
-    // ui.set_counter(12);
-    // ui.on_request_increase_value({
-    //     let ui_handle = ui.as_weak();
-    //     move || {
-    //         let ui = ui_handle.unwrap();
-    //         ui.set_counter(ui.get_counter() + 1);
-    //     }
-    // });
 
     ui.run()
 }

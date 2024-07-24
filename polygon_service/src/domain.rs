@@ -1,17 +1,22 @@
+use serde::{Deserialize, Serialize};
 
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct TickerData{
     ticker:String,
     query_count:i32,
     results_count:i32,
     adjusted:bool,
-    results:TickerDataResult,
+    results:Vec<TickerDataResult>,
     status: String,
+    #[serde(rename="request_id")]
     request_id: String,
     count: i32
 }
 
+#[derive(Serialize, Deserialize)]
 struct TickerDataResult{
-    v:i32,
+    v:f32,
     vw:f32,
     o:f32,
     c:f32,
