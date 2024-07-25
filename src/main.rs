@@ -7,8 +7,7 @@ async fn main() -> Result<(), slint::PlatformError> {
         client: PolygonService::create_client().unwrap()
     };
 
-    let test_value = service.get_ticker_data("AAPL").await;
-    let test2 = test_value.err().unwrap().to_string();
+    let _test_value = service.get_ticker_data("AAPL").await;
 
     let ui = MainWindow::new()?;
     ui.set_winHeight(50);

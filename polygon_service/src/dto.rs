@@ -9,6 +9,10 @@ pub struct TickerData{
     adjusted:bool,
     results:Vec<TickerDataResult>,
     status: String,
+    /**
+    This is required as this is for some reason the only field that is not camelCase. Don't be mad
+    at me, be mad at Polygon.
+    **/
     #[serde(rename="request_id")]
     request_id: String,
     count: i32

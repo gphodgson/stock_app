@@ -1,3 +1,3 @@
-mod domain;
+mod dto;
 pub mod service;
 
